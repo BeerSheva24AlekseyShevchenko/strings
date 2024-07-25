@@ -14,7 +14,7 @@ final public class Strings {
 
     public static String javaVariable() {
         return String.format(
-            "^(?!(%s)$)[A-z$_][0-9A-z$_]*$",
+            "^(?!(%s)$)(?!_$)[A-z$_][0-9A-z$_]*$",
             String.join("|", keywords)
         );
     }
