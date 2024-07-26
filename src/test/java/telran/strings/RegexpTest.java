@@ -23,6 +23,7 @@ public class RegexpTest {
         assertFalse("int".matches(javaVariable()));
         assertFalse("float".matches(javaVariable()));
         assertFalse("for".matches(javaVariable()));
+        assertFalse("[1".matches(javaVariable()));
         assertFalse("_".matches(javaVariable()));
         assertFalse("".matches(javaVariable()));
 
