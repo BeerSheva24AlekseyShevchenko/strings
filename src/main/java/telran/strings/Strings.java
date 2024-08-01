@@ -61,9 +61,7 @@ final public class Strings {
 
         int i = 0;
         while(isValid && i < operands.length) {
-            String operand = operands[i]
-                .replaceAll("^[(\\s]*", "")
-                .replaceAll("[)\\s]*$", "");
+            String operand = operands[i].replaceAll("^[(\\s]*|[)\\s]*$", "");
             isValid = isArithmeticOperand(operand);
             i++;
         }
@@ -71,15 +69,8 @@ final public class Strings {
         return isValid;
     }
 
-    public static boolean isArithmeticOperand(String... str) {
-        boolean res = true;
-        int i = 0;
-        while (res && i < str.length) {
-            res = isPositiveNumber(str[i]) || isJavaName(str[i]);
-            i++;
-        }
-
-        return res;
+    public static boolean isArithmeticOperand(String str) {
+        return isPositiveNumber(str) || isJavaName(str);
     }
 
     public static boolean isPositiveNumber(String str) {
